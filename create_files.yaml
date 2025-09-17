@@ -1,0 +1,17 @@
+--- 
+- name: Creating files and folders
+  host: all
+  tasks: 
+  - name: Creating files
+    file: 
+      path: /home/azureuser/example.txt
+      state: touch
+      owner: azureuser
+      group: azureuser
+      mode: 0777
+      
+  - name: Creating folders
+    file:
+      path: /home/azureuser/temp/
+      state: touch
+    

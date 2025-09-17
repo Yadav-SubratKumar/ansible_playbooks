@@ -1,0 +1,16 @@
+---
+- name: Copying and Running a shell script 
+  host: all
+  tasks: 
+  - name: Copying shell script
+    copy:
+    src: /home/azureuser/example.sh
+    dest: /home/azureuser/shell_scripts/
+    owner: azureuser
+    group: azureuser
+
+  - name: Running script
+    shell: /home/azureuser/shell_scripts/example.sh >> example.log
+    args:
+      chdir: /home/azureuser/shell_scripts
+      creates: example.log

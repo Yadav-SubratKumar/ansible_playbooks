@@ -1,0 +1,10 @@
+--- 
+- name: Change file's permission
+  host: all
+  tasks: 
+  - name: Changing permission
+    file: 
+      path: /home/azureuser/example.txt
+      mode: 0740
+
+    

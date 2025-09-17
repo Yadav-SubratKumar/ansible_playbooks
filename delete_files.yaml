@@ -1,0 +1,14 @@
+--- 
+- name: Delete files and folders
+  host: all
+  tasks: 
+  - name: Delete files
+    file: 
+      path: /home/azureuser/example.txt
+      state: absent
+
+  - name: Creating folders
+    file:
+      path: /home/azureuser/temp/
+      state: absent
+    

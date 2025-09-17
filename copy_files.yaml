@@ -1,0 +1,11 @@
+---
+- name: Copying files
+  host: all
+  tasks: 
+  - name: Copy files
+    copy:
+    src: /home/azureuser/example.txt
+    dest: /home/azureuser/temp/
+    owner: azureuser
+    group: azureuser
+    backup: true

@@ -1,0 +1,20 @@
+---
+- name: Creation a cron job for running a shell script 
+  host: all
+  tasks: 
+  - name: Creating cron job
+    cron:
+      name: Run the example script
+      minute: 30
+      hour: 17
+      day: 20
+      month: "*" 
+      weekday: "*" 
+      user: azureuser
+      job: /home/azureuser/shell_scripts/example.sh
+
+  - name: Deleting cron job
+    cron:   
+      name: Deleting job
+      state: absent
+      user: azureuser
