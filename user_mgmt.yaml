@@ -1,0 +1,22 @@
+--- 
+- name: Creating user
+  host: all
+  tasks: 
+  - name: User Creation
+    user: 
+      name: james 
+      comment: New user adding for QA Team
+      shell: /bin/bash
+      groups: james,azureuser
+
+  - name: User Deleteion
+    user: 
+      name: james 
+      state: absent
+      remove: yes
+
+  - name: Update User Password 
+    user:
+      name: james
+      update_password: always
+      password: "{{'james@213' | password_hash('sha512')}}"

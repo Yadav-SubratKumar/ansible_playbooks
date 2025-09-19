@@ -1,0 +1,19 @@
+# Use this syntax ansible-playbook --ask-become-pass <file-name>
+---
+- name: Firewall changes
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Enabling a service in firewalld.
+    firewall: 
+      port: 80/tcp
+      permanent: true
+      state: enabled
+
+  - name: Reload the firewalld
+    service: 
+      name: firewalld
+      state: reloaded
+      
+    

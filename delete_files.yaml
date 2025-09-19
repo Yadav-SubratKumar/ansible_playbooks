@@ -7,7 +7,7 @@
       path: /home/azureuser/example.txt
       state: absent
 
-  - name: Creating folders
+  - name: Deleting folders
     file:
       path: /home/azureuser/temp/
       state: absent

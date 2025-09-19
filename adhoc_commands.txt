@@ -1,0 +1,13 @@
+ansible myserver -m ping
+
+ansible myserver -m copy -a "src=/home/azureuser/example.txt dest=/temp/script/" 
+
+ansible myserver -m service -a "name=nginx state=reloaded"
+
+ansible myserver -m shell -a "/temp/script/test.sh"
+
+ansible myserver -m command -a "free -h"
+
+ansible myserver -m command -a "df -h"
+
+ansible myserver -m apt -a "name=nginx state=present"

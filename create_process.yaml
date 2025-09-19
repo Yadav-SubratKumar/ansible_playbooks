@@ -1,0 +1,9 @@
+---
+- name: Creating process 
+  hosts: all
+
+  tasks:
+  - name: Start the service.
+    service: 
+      name: nginx
+      state: started

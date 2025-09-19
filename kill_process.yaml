@@ -1,0 +1,9 @@
+---
+- name: Find and kill process 
+  hosts: all
+
+  tasks:
+  - name: Locating process and killing it.
+    ignore_error: yes
+    shell: "pgrep nginx | xargs kill"
+    

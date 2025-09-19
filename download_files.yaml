@@ -1,0 +1,11 @@
+--- 
+- name: Download files
+  host: all
+  tasks: 
+  - name: Download files
+    get_url: 
+      url: https://www.python.org/ftp/python/3.12.2/Python-3.12.2.tar.xz
+      dest: /home/azureuser/script/
+      owner: azureuser
+      group: azureuser
+      mode: 0777
